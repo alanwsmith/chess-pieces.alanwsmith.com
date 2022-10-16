@@ -8,7 +8,7 @@ from pprint import pprint
 from string import Template
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-source_dir = os.path.join('..', '..', 'site', 'material-images')
+source_dir = os.path.join('..', '..', 'site', 'pieces')
 
 class Builder():
     def __init__(self):
@@ -48,12 +48,18 @@ class Builder():
         for material in self.materials:
             images = []
             for image_file in material['files']:
-                print(image_file)
+                images.append(
+                    f"""
+<img class="piece-image" src="{image_file.replace('../../site', '')}" />
+"""
+                )
+
+
             output_string = f"""
 <h2>#{material['id']} - {material['date'].strftime("%B %-d, %Y") }</h2>
+{"".join(images)}
 """
             materials.append(output_string)
-
 
         with open('home-page-template.html') as _tmpl:
             template = Template(_tmpl.read())
@@ -62,8 +68,6 @@ class Builder():
             )
             with open('../../site/index.html', 'w') as _out:
                 _out.write(output)
-
-
 
 
 
