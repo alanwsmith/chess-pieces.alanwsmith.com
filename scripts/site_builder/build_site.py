@@ -5,6 +5,7 @@ import os
 
 from datetime import datetime
 from pprint import pprint
+from string import Template
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 source_dir = os.path.join('..', '..', 'site', 'material-images')
@@ -30,6 +31,7 @@ class Builder():
             material['id'] = int(name_parts[0])
             material['date'] = datetime.strptime(name_parts[1], "%Y-%m-%d")
         self.materials.sort(key=lambda x: x['id'])
+        self.materials.reverse()
 
     def get_files(self):
         for material in self.materials:
@@ -38,12 +40,39 @@ class Builder():
                 if os.path.isfile(file)
             ]
             material['files'].sort()
+            material['files'].reverse()
+
+    def output_file(self):
+        materials = []
+
+        for material in self.materials:
+            images = []
+            for image_file in material['files']:
+                print(image_file)
+            output_string = f"""
+<h2>#{material['id']} - {material['date'].strftime("%B %-d, %Y") }</h2>
+"""
+            materials.append(output_string)
+
+
+        with open('home-page-template.html') as _tmpl:
+            template = Template(_tmpl.read())
+            output = template.substitute(
+                content="\n".join(materials)
+            )
+            with open('../../site/index.html', 'w') as _out:
+                _out.write(output)
+
+
+
+
 
 if __name__ == '__main__':
     b = Builder()
     b.get_materials()
     b.prep_materials()
     b.get_files()
+    b.output_file()
     pprint(b.materials)
 
 
