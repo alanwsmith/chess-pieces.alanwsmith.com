@@ -50,7 +50,9 @@ class Builder():
             for image_file in material['files']:
                 images.append(
                     f"""
+<div class="piece-container">
 <img class="piece-image" src="{image_file.replace('../../site', '')}" />
+</div>
 """
                 )
 
