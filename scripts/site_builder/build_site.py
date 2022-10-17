@@ -58,7 +58,7 @@ class Builder():
 
 
             output_string = f"""
-<h2>#{material['id']} - {material['date'].strftime("%B %-d, %Y") }</h2>
+<h2>Material #{material['id']} - {material['date'].strftime("%B %-d, %Y") }</h2>
 {"".join(images)}
 """
             materials.append(output_string)
