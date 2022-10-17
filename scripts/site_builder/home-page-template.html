@@ -3,20 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chess Material - alan w. smith</title>
+    <title>The Chess Pieces Of Alan</title>
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Chess Material" />
+    <meta property="og:title" content="The Chess Pieces Of Alan" />
     <meta
       property="og:description"
-      content="A collection of 3D renderings of chess pieces I built in Blender"
+      content="A collection of 3D chess piece renderings I made in Blender"
     />
     <meta
       property="og:image"
-      content="https://chess.alanwsmith.com/assets/og-images/main.png"
+      content="https://chess-pieces.alanwsmith.com/assets/og-images/main.png"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site:id" content="@TheIdOfAlan" />
     <meta name="twitter:creator" content="@TheIdOfAlan" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Mukta:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       rel="icon"
@@ -87,25 +93,41 @@
       h5,
       h6 {
         color: #fffffe;
+        font-family: 'Mukta', sans-serif;
+      }
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 2.7rem;
+      }
+
+      h2 {
+        margin-bottom: 38px;
+        border-bottom: 1px solid #ccc;
       }
       a {
         color: #eebbc3;
         text-decoration: none;
       }
       header {
+        padding-left: 12px;
+        padding-right: 12px;
         padding-top: 18px;
         padding-bottom: 4px;
         width: 100%;
         max-width: 84ch;
         margin: 0 auto;
-        border-bottom: 1px solid #888;
       }
       main {
+        padding-left: 12px;
+        padding-right: 12px;
         width: 100%;
         max-width: 84ch;
         margin: 0 auto;
       }
       footer {
+        padding-left: 12px;
+        padding-right: 12px;
         width: 100%;
         max-width: 84ch;
         margin: 0 auto;
@@ -114,23 +136,18 @@
         padding-bottom: 12px;
         font-size: 0.9rem;
       }
-
-      .material-image {
+      .piece-image {
         display: block;
-        max-width: 100%;
+        max-width: calc(86% - 108px);
         height: auto;
+        margin: auto;
+        border: 50px solid white;
+        padding: 4px;
       }
-      .material-container {
-        background-color: #fff;
-        margin: 20px;
-        padding: 3px;
+      .piece-container {
+        padding-bottom: 60px;
       }
     </style>
-
-    <script type="text/javascript">
-      function kickoff() {}
-      document.addEventListener('DOMContentLoaded', kickoff)
-    </script>
   </head>
   <body>
     <header>
@@ -139,56 +156,8 @@
       <a href="https://podcast.alanwsmith.com/">podcast</a>
     </header>
     <main>
-      <h1>Chess Material</h1>
-
+      <h1>The Chess Pieces Of Alan</h1>
       $content
-
-      <h3>Four - Oct. 15, 2022</h3>
-      <div class="material-container">
-        <img
-          class="material-image"
-          src="/assets/material-images/0004/pawn--0004--2022-10-15.png"
-        />
-      </div>
-
-      <h3>Three - Oct. 15, 2022</h3>
-      <div class="material-container">
-        <img
-          class="material-image"
-          src="/assets/material-images/0003/knight--2022-10-15.png"
-        />
-      </div>
-
-      <h3>Two - Oct. 14, 2022</h3>
-      <div class="material-container">
-        <img
-          class="material-image"
-          src="/assets/material-images/0002/pawn--0002--2022-10-14.png"
-        />
-      </div>
-
-      <h3>One - Oct. 14, 2022</h3>
-
-      <div class="material-container">
-        <img
-          class="material-image"
-          src="/assets/material-images/0001/1-flat-view.png"
-        />
-      </div>
-
-      <div class="material-container">
-        <img
-          class="material-image"
-          src="/assets/material-images/0001/2-angle-view.png"
-        />
-      </div>
-
-      <div class="material-container">
-        <img
-          class="material-image"
-          src="/assets/material-images/0001/3-knight-only.png"
-        />
-      </div>
     </main>
     <footer>
       made by <a href="https://twitter.com/TheIdOfAlan">alan w. smith</a>
