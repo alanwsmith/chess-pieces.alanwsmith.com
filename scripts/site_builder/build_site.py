@@ -44,7 +44,6 @@ class Builder():
 
     def output_file(self):
         materials = []
-
         for material in self.materials:
             images = []
             for image_file in material['files']:
@@ -56,9 +55,8 @@ class Builder():
 """
                 )
 
-
             output_string = f"""
-<h2>Material #{material['id']} - {material['date'].strftime("%B %-d, %Y") }</h2>
+<h2>#{material['id']}</h2>
 {"".join(images)}
 """
             materials.append(output_string)
@@ -71,8 +69,6 @@ class Builder():
             with open('../../site/index.html', 'w') as _out:
                 _out.write(output)
 
-
-
 if __name__ == '__main__':
     b = Builder()
     b.get_materials()
@@ -80,5 +76,4 @@ if __name__ == '__main__':
     b.get_files()
     b.output_file()
     pprint(b.materials)
-
 
