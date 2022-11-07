@@ -29,7 +29,7 @@ class Builder():
             dir_name = material['dir'].split('/')[-1]
             name_parts = dir_name.split('--')
             material['id'] = int(name_parts[0])
-            material['date'] = datetime.strptime(name_parts[1], "%Y-%m-%d")
+            # material['date'] = datetime.strptime(name_parts[1], "%Y-%m-%d")
         self.materials.sort(key=lambda x: x['id'])
         self.materials.reverse()
 
@@ -44,7 +44,9 @@ class Builder():
 
     def output_file(self):
         materials = []
+        counter = len(self.materials) + 1
         for material in self.materials:
+            counter -= 1
             images = []
             for image_file in material['files']:
                 images.append(
@@ -56,8 +58,8 @@ class Builder():
                 )
 
             output_string = f"""
-<h2>#{material['id']}</h2>
 {"".join(images)}
+<h3>{counter}</h3>
 """
             materials.append(output_string)
 
